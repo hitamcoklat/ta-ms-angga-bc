@@ -56,7 +56,15 @@ signInPengguna = async (req, res) => {
   });
 };
 
+const getAllPengguna = async (req, res) => {
+  const pengguna = await db.mst_pengguna.findAll();
+  res.status(200).json({
+    data: pengguna
+  });    
+}
+
 module.exports = {
   registerPengguna,
   signInPengguna,
+  getAllPengguna
 };
